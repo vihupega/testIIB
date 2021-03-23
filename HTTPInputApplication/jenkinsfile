@@ -23,7 +23,7 @@ set projectName=testIIB
 echo off
 '''
 
-archiveArtifacts 'testIIB.bar'
+archiveArtifacts 'testIIB/HTTPInputApplication1.bar'
 }
  }
    }
