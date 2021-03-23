@@ -17,14 +17,6 @@ set projectName=testIIB
 '''
 }
       }
-      stage('deploy bar') {
- steps {
- bat label: '', script: '''
-echo off
-'''
-
-archiveArtifacts 'testIIB/HTTPInputApplication1.bar'
-}
- }
+  
    }
 }
