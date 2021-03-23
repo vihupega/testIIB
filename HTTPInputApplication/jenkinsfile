@@ -13,7 +13,7 @@ pipeline {
         bat label: '', script: '''
 echo off
 set projectName=testIIB
-"/home/vihupega/ace-11.0.0.11/tools/ ./mqsicreatebar" -data . -b %projectName%.bar -a %projectName% -cleanBuild
+"/home/vihupega/ace-11.0.0.11/tools/ ./mqsicreatebar" -data . -b testIIB/HTTPInputApplication1.bar -a HTTPInputApplication -cleanBuild
 '''
 }
       }
