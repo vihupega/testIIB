@@ -16,7 +16,7 @@ pipeline {
  	stage("build bar"){
      		steps {
         	  	script {
-        	   		"/home/vihupega/ace-11.0.0.11/tools/ ./mqsicreatebar" -data . -b testIIB/HTTPInputApplication1.bar -a HTTPInputApplication -cleanBuild
+        	   		"/home/vihupega/ace-11.0.0.11/tools/ ./mqsicreatebar" -data HTTPInputApplication -b testIIB/HTTPInputApplication1.bar -a HTTPInputApplication -cleanBuild
         	   		'''
         		}
       		}
