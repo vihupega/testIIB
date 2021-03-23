@@ -15,7 +15,8 @@ pipeline {
       steps {
           script {			
            sh "echo 'Compilando Con Jenkins'"
-           "sudo /home/vihupega/ace-11.0.0.11/tools/ ./mqsicreatebar" -data . -b testIIB/HTTPInputApplication1.bar -a HTTPInputApplication -trace
+           "sudo /home/vihupega/ace-11.0.0.11/tools/ ./mqsicreatebar" -data testIIB -b testIIB/HTTPInputApplication1.bar -a HTTPInputApplication -trace
+           '''
         }
       }
     }
