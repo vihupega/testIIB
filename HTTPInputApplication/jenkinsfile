@@ -1,22 +1,39 @@
-pipeline {
-   agent any
+import groovy.json.JsonSlurperClassic
 
-   stages {
-      stage('checkout code') {
-         steps {
-            deleteDir()
-            git 'https://github.com/vihupega/testIIB.git'
-         }
-      }
-      stage('build bar') {
-        steps {
-        bat label: '', script: '''
-echo off
-set projectName=testIIB
-"/home/vihupega/ace-11.0.0.11/tools/ ./mqsicreatebar" -data . -b testIIB/HTTPInputApplication1.bar -a HTTPInputApplication -cleanBuild
-'''
+def jsonParse(def json) {
+    new groovy.json.JsonSlurperClassic().parseText(json)
 }
-      }
+pipeline {
+  agent any
   
-   }
+  stages {
+	stage("checkout code") {
+         	steps {
+            		deleteDir()
+            		git 'https://github.com/vihupega/testIIB.git'
+         	}
+      	}
+ 	stage("build bar"){
+     		steps {
+        	  	script {
+        	   		"/home/vihupega/ace-11.0.0.11/tools/ ./mqsicreatebar" -data . -b testIIB/HTTPInputApplication1.bar -a HTTPInputApplication -cleanBuild
+        	   		'''
+        		}
+      		}
+    	}
+  }
+  post {
+      always {          
+          deleteDir()
+           sh "echo 'fase always'"
+      }
+      success {
+            sh "echo 'Compilacion Exitosa'"
+        }
+
+      failure {
+            sh "echo 'Compilacion Erronea'"
+      }
+      
+  }
 }
