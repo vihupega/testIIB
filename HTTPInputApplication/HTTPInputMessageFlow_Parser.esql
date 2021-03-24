@@ -2,7 +2,7 @@ CREATE COMPUTE MODULE HTTPInputMessageFlow_Parser
 	CREATE FUNCTION Main() RETURNS BOOLEAN
 	BEGIN
 		DECLARE refInput REFERENCE TO InputRoot.JSON.Data;
-		SET OutputRoot.JSON.Data.Message= refInput.InputField1||''||refInput.InputField2;
+		SET OutputRoot.JSON.Data.Message= refInput.InputField1||' Prtueba '||refInput.InputField2;
 		RETURN TRUE;
 	END;
 
