@@ -2,7 +2,8 @@ CREATE COMPUTE MODULE HTTPInputMessageFlow_Parser
 	CREATE FUNCTION Main() RETURNS BOOLEAN
 	BEGIN
 		DECLARE refInput REFERENCE TO InputRoot.JSON.Data;
-		SET OutputRoot.JSON.Data.Message= refInput.InputField1||' Prueba '||refInput.InputField2;
+		--SET OutputRoot.JSON.Data.Message= refInput.InputField1||' Prueba '||refInput.InputField2;
+		SET OutputRoot.JSON.Data.Message= 'Prueba de flujo de IIB Git Jenkins ';
 		RETURN TRUE;
 	END;
 
