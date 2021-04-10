@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=ibmcom/ace
+ARG BASE_IMAGE=localhost:5000/my-ace
 FROM $BASE_IMAGE
 
 ARG LICENSE
